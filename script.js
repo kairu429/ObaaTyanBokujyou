@@ -8,7 +8,7 @@ public class DiscordWebhook {
 
     public static void sendWebhook(String name, String message) {
         try {
-            String webhookURL = "https://discord.com/api/webhooks/1405814631288799343/WaFUH_m9SOT0KNft-YvHJj2zxTwVuZYx8lkBOsGAmtvzm4Y7cFLLCW40m9IUbcA5J4xX";
+            String webhookURL = "https://discord.com/api/webhooks/1405814630454001685/K3shaH2eZ2bNeK4S5USbTWskwrTtuge9dTjG4kiFTLUKsi6QlJ428KIZt32YIOpy7C2u";
 
             URL url = new URL(webhookURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
