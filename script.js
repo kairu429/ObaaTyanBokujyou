@@ -21,7 +21,6 @@ public class DiscordWebhook {
             embed.put("color", 0x00FF00); // 緑
             embed.put("fields", new org.json.JSONArray()
                     .put(new JSONObject().put("name", "名前").put("value", name))
-                    .put(new JSONObject().put("name", "メール").put("value", email))
                     .put(new JSONObject().put("name", "メッセージ", "value", message))
             );
 
