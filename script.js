@@ -2,10 +2,11 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 public class DiscordWebhook {
 
-    public static void sendWebhook(String name, String email, String message) {
+    public static void sendWebhook(String name, String message) {
         try {
             String webhookURL = "https://discord.com/api/webhooks/1405814631288799343/WaFUH_m9SOT0KNft-YvHJj2zxTwVuZYx8lkBOsGAmtvzm4Y7cFLLCW40m9IUbcA5J4xX";
 
@@ -18,14 +19,16 @@ public class DiscordWebhook {
             // 埋め込み用JSON作成
             JSONObject embed = new JSONObject();
             embed.put("title", "おばあちゃん牧場 お問い合わせ");
-            embed.put("color", 0x00FF00); // 緑
-            embed.put("fields", new org.json.JSONArray()
-                    .put(new JSONObject().put("name", "名前").put("value", name))
-                    .put(new JSONObject().put("name", "メッセージ", "value", message))
-            );
+            embed.put("color", 0x00FF00);
+
+            JSONArray fields = new JSONArray();
+            fields.put(new JSONObject().put("name", "名前").put("value", name));
+            fields.put(new JSONObject().put("name", "メッセージ").put("value", message));
+
+            embed.put("fields", fields);
 
             JSONObject payload = new JSONObject();
-            payload.put("embeds", new org.json.JSONArray().put(embed));
+            payload.put("embeds", new JSONArray().put(embed));
 
             OutputStream os = conn.getOutputStream();
             os.write(payload.toString().getBytes());
@@ -40,8 +43,7 @@ public class DiscordWebhook {
         }
     }
 
-    // 動作テスト
     public static void main(String[] args) {
-        sendWebhook("田中花子", "hanako@example.com", "こんにちは！ネタサイト面白いです！");
+        sendWebhook("田中花子", "こんにちは！ネタサイト面白いです！");
     }
 }
