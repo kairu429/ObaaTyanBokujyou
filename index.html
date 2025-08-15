@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 検索エンジンに表示させない -->
+    <meta name="robots" content="noindex">
+
+    <title>おばあちゃん牧場 🇺🇸</title>
+
+    <!-- Google Fonts USAっぽく -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>おばあちゃん牧場 🇺🇸</h1>
+        <nav>
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">動物たち</a></li>
+                <li><a href="#">ギャラリー</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to Grandma's Farm!</h2>
+            <p>ここは存在しないおばあちゃん牧場です。でもUSA風の雰囲気で楽しんでね！</p>
+        </section>
+
+        <section class="animals">
+            <h2>牧場の仲間たち</h2>
+            <div class="animal-cards">
+                <div class="card">🐮 牛</div>
+                <div class="card">🐷 豚</div>
+                <div class="card">🐔 鶏</div>
+                <div class="card">🐑 羊</div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>お問い合わせ</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="名前" required>
+                <input type="email" placeholder="メール" required>
+                <textarea placeholder="メッセージ" required></textarea>
+                <button type="submit">送信</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 おばあちゃん牧場. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
